@@ -13,8 +13,6 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import { connect } from "react-redux";
 import { loginUser } from "../redux/actions/userActions";
 
-import axios from "axios";
-
 const styles = (theme) => ({
   ...theme.spreadThis
 });
