@@ -53,6 +53,22 @@ export const getUserData = () => (dispatch) => {
     }).catch(error => { console.log(error) });
 }
 
+export const uploadUserImage = (imageData) => (dispatch) => { 
+    dispatch({ type: LOADING_USER });
+    axios.post("/user/image", imageData)
+    .then(() => {
+        dispatch(getUserData());
+    }).catch(error => { console.log(error) });
+};
+
+export const editUserDetails = (userDetails) => (dispatch) => { 
+    dispatch({ type: LOADING_USER });
+    axios.post("/user", userDetails)
+    .then(() => {
+        dispatch(getUserData());
+    }).catch(error => { console.log(error) });
+};
+
 const setLocalStorage = (token) => {
     const FBIdToken = `Bearer ${token}`;
     localStorage.setItem("FBIdToken", FBIdToken); // save token into local storage
