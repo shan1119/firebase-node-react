@@ -21,6 +21,7 @@ import KeyboardReturn from '@material-ui/icons/KeyboardReturn';
 // redux
 import { connect } from "react-redux";
 import { uploadUserImage, logoutUser } from "../redux/actions/userActions";
+import MyButton from './MyButton';
 
 const styles = (theme) => ({
     ...theme.profile
@@ -52,11 +53,9 @@ class Profile extends Component {
                     <div className="image-wrapper">
                         <img src={imageUrl} alt="profile" className="profile-image"/>
                         <input type="file" id="userImage" hidden="hidden" onChange={this.handleImageChange}/>
-                        <Tooltip title="Edit profile image" placement="top">
-                            <IconButton onClick={this.handleEditImage} className="button">
-                                <EditIcon color="primary"/>
-                            </IconButton>
-                        </Tooltip>
+                        <MyButton tip="Edit profile image" onClick={this.handleEditImage} btnClassName="button">
+                            <EditIcon color="primary"/>
+                        </MyButton>
                     </div>
                 </div>
                 <hr/>
@@ -85,11 +84,9 @@ class Profile extends Component {
                     <CalendarToday color="primary"/>{' '}
                     <span>Joined {dayjs(createdAt).format('MMM YYYY')}</span>
                 </div>
-                <Tooltip title="Logout" placement="top">
-                    <IconButton onClick={this.handleLogout}>
-                        <KeyboardReturn color="primary"/>
-                    </IconButton>
-                </Tooltip>
+                <MyButton tip="Logout" onClick={this.handleLogout}>
+                    <KeyboardReturn color="primary"/>
+                </MyButton>
                 <EditDetails/>
             </Paper>
         ) : (

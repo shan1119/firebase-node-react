@@ -25,7 +25,7 @@ const theme = createMuiTheme(themeFile);
 const token = localStorage.FBIdToken;
 if(token) {
   const decodedToken = jwtDecode(token);
-  console.log(decodedToken);
+  // console.log(decodedToken);
   if(decodedToken.exp * 1000 < Date.now()) {
     // window.location.href = "/login"
     store.dispatch(logoutUser());
@@ -35,7 +35,7 @@ if(token) {
     store.dispatch(getUserData());
   }
 }
-console.log("token: ", token);
+// console.log("token: ", token);
 
 function App() {
   return (
