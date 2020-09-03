@@ -33,7 +33,7 @@ class Home extends Component {
 }
 
 Home.propTypes = {
-    screams: PropTypes.object.isRequired,
+    data: PropTypes.object.isRequired,
     getScreams: PropTypes.func.isRequired,
   }
   const mapStateToProps = (state) => ({

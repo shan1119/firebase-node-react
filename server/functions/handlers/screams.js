@@ -15,7 +15,9 @@ exports.getAllScreams = (req, res) => {
                     body: doc.data().body,
                     userHandle: doc.data().userHandle,
                     createdAt: doc.data().createdAt,
-                    userImage: doc.data().imageUrl,
+                    userImage: doc.data().userImage,
+                    commentCount: doc.data().commentCount,
+                    likeCount: doc.data().likeCount,
                 });
             });
             return res.json(screams);
@@ -32,7 +34,7 @@ exports.postScream = (req, res) => {
     const newScream = {
         body: req.body.body,
         userHandle: req.user.handle,
-        imageUrl: req.user.imageUrl,
+        userImage: req.user.imageUrl,
         createdAt: new Date().toISOString(),
         likeCount: 0,
         commentCount: 0
