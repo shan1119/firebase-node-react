@@ -9,9 +9,9 @@ import Button from "@material-ui/core/Button";
 import MyButton from "./MyButton";
 
 // icons
-import AddIcon from "@material-ui/icons/Add"
 import HomeIcon from "@material-ui/icons/Home"
 import Notifications from "@material-ui/icons/Notifications"
+import PostScream from "./PostScream";
 
 class Navbar extends Component {
     render() {
@@ -21,9 +21,7 @@ class Navbar extends Component {
               <ToolBar className="nav-container">
                 {authenticated ? (
                   <Fragment>
-                    <MyButton tip="Post a Scream">
-                      <AddIcon />
-                    </MyButton>
+                    <PostScream />
                     <MyButton tip="Home">
                       <HomeIcon />
                     </MyButton>

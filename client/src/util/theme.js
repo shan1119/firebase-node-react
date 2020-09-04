@@ -42,7 +42,7 @@ export default  {
         position: "absolute"
       }
     },
-    profile: {
+    sub: {
       paper: {
         padding: 20
       },

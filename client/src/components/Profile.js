@@ -24,7 +24,7 @@ import { uploadUserImage, logoutUser } from "../redux/actions/userActions";
 import MyButton from './MyButton';
 
 const styles = (theme) => ({
-    ...theme.profile
+    ...theme.sub
   });
 
 class Profile extends Component {
