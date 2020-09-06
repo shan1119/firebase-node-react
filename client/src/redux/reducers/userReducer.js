@@ -1,5 +1,4 @@
 import { SET_USER, SET_AUTHENTICATED, SET_UNAUTHENTICATED, LOADING_USER, LIKE_SCREAM, UNLIKE_SCREAM } from "../types";
-import { DialogActions } from "@material-ui/core";
 
 const initialState = {
     authenticated: false,
