@@ -10,18 +10,22 @@ import AddIcon from "@material-ui/icons/Add"
 
 // redux
 import { connect } from "react-redux";
-import { postScream } from "../redux/actions/dataActions";
+import { postScream, clearErrors } from "../redux/actions/dataActions";
 import MyButton from './MyButton';
 import { Dialog, DialogTitle, DialogContent, CircularProgress } from '@material-ui/core';
 
 const styles = (theme) => ({
     ...theme.sub,
-    submitButton: { position: "relative" },
+    submitButton: { 
+        position: "relative",
+        float: "right",
+        marginTop: 10,
+    },
     progressSpinner: { position: "absolute" },
     closeButton: { 
         position: "absolute",
         left: "90%",
-        top: "10%",
+        top: "3%",
     },
   });
 
@@ -36,13 +40,14 @@ class PostScream extends Component {
             this.setState({errors: nextProps.UI.errors});
         }
         if(!nextProps.UI.errors && !nextProps.UI.loading){
-            this.handleClose();
+            this.setState({ open: false, errors: {}, body: ""});
         }
     }
     handleOpen = () => {
         this.setState({ open: true });
     }
     handleClose = () => {
+        this.props.clearErrors();
         this.setState({ open: false, errors: {}, body: ""});
     }
     handleChange = (event) => {
@@ -96,6 +101,6 @@ const mapStateToProps = (state) => ({
     UI: state.UI,
 });
 
-const mapActionsToProps = { postScream };
+const mapActionsToProps = { postScream, clearErrors };
   
 export default connect(mapStateToProps, mapActionsToProps)(withStyles(styles)(PostScream));

@@ -45,8 +45,8 @@ class DeleteScream extends Component {
                     <DialogTitle>Delete Scream Conform</DialogTitle>
                     <DialogContent>Are you sure to delete this scream?</DialogContent>
                     <DialogActions>
-                        <Button onClick={this.handleClose}>Cancle</Button>
-                        <Button onClick={this.handleDelete}>Delete</Button>
+                        <Button onClick={this.handleClose} color="primary">Cancle</Button>
+                        <Button onClick={this.handleDelete} color="secondary">Delete</Button>
                     </DialogActions>
                 </Dialog>
             </Fragment>
