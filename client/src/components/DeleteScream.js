@@ -56,7 +56,7 @@ class DeleteScream extends Component {
 
 DeleteScream.propTypes = {
     classes: PropTypes.object.isRequired,
-    screamId: PropTypes.object.isRequired,
+    screamId: PropTypes.string.isRequired,
     deleteScream: PropTypes.func.isRequired,
   }
   const mapActionsToProps = {
