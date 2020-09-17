@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import dayjs from 'dayjs';
 
 import CloseIcon from "@material-ui/icons/Close";
+import ChatIcon from "@material-ui/icons/Chat";
 import UnfoldMore from "@material-ui/icons/UnfoldMore";
 import { Dialog, DialogContent, CircularProgress, Grid } from '@material-ui/core';
 
@@ -13,6 +14,7 @@ import { Dialog, DialogContent, CircularProgress, Grid } from '@material-ui/core
 import { connect } from "react-redux";
 import { getScream } from "../redux/actions/dataActions";
 import MyButton from './MyButton';
+import LikeButton from './LikeButton';
 
 const styles = theme => ({
   ...theme.sub,
@@ -20,13 +22,21 @@ const styles = theme => ({
     border: 'none',
     margin: 4
   },
+  expandButton: {
+    position: "absolute",
+    left: "90%",
+  },
   closeButton: {
     position: "absolute",
     left: "90%",
     top: "1%",
   },
-  DialogContent: {
+  dialogContent: {
+      width: 500,
       padding: 20,
+  },
+  spinnerDiv: {
+      textAlign: "center",
   }
 })
 
@@ -44,9 +54,11 @@ class ScreamDialog extends Component {
     render() {
         const { classes, UI: { loading }, data: { scream: { body, createdAt, userImage, userHandle, screamId, likeCount, commentCount } } } = this.props;
         const dialogMarkup = loading ? (
-            <CircularProgress size={200} />
+            <div className={classes.spinnerDiv}>
+                <CircularProgress size={200} />
+            </div>
         ) : (
-            <Grid container spacing={16}>
+            <Grid container spacing="10">
                 <Grid item sm={5} className={classes.profile}>
                     <img src={userImage} alt="Profile" className="profile-image" />
                 </Grid>
@@ -60,6 +72,12 @@ class ScreamDialog extends Component {
                     </Typography>
                     <hr className={classes.invisibleSeparator} />
                     <Typography variant="body1">{body}</Typography>
+                    <LikeButton screamId={screamId} />
+                    <span>{likeCount} likes</span>
+                    <MyButton tip="comments">
+                        <ChatIcon color="primary"/>
+                    </MyButton>
+                    <span>{commentCount} comments</span>
                 </Grid>
             </Grid>
         );
@@ -72,7 +90,7 @@ class ScreamDialog extends Component {
                     <MyButton tip="Close" onClick={this.handleClose} tipClassName={classes.closeButton}>
                         <CloseIcon />
                     </MyButton>
-                    <DialogContent className={classes.DialogContent}>{dialogMarkup}</DialogContent>
+                    <DialogContent className={classes.dialogContent}>{dialogMarkup}</DialogContent>
                 </Dialog>
             </Fragment>
         );
