@@ -7,7 +7,7 @@ import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
 
 // redux
 import { connect } from "react-redux";
-import { likeScream, unlikeScream } from "../redux/actions/dataActions";
+import { likeScream, unlikeScream } from "../../redux/actions/dataActions";
 import MyButton from './MyButton';
 
 

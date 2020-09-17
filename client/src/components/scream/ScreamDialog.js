@@ -12,7 +12,7 @@ import { Dialog, DialogContent, CircularProgress, Grid } from '@material-ui/core
 
 // redux
 import { connect } from "react-redux";
-import { getScream } from "../redux/actions/dataActions";
+import { getScream } from "../../redux/actions/dataActions";
 import MyButton from './MyButton';
 import LikeButton from './LikeButton';
 

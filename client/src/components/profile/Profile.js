@@ -18,8 +18,8 @@ import KeyboardReturn from '@material-ui/icons/KeyboardReturn';
 
 // redux
 import { connect } from "react-redux";
-import { uploadUserImage, logoutUser } from "../redux/actions/userActions";
-import MyButton from './MyButton';
+import { uploadUserImage, logoutUser } from "../../redux/actions/userActions";
+import MyButton from '../scream/MyButton';
 
 const styles = (theme) => ({
     ...theme.sub

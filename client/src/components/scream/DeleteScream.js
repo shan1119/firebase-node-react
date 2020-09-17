@@ -3,7 +3,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import PropTypes from 'prop-types';
 // redux
 import { connect } from "react-redux";
-import { deleteScream } from "../redux/actions/dataActions";
+import { deleteScream } from "../../redux/actions/dataActions";
 import MyButton from './MyButton';
 import DeleteButton from '@material-ui/icons/Delete';
 // mui

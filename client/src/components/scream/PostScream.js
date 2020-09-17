@@ -10,7 +10,7 @@ import AddIcon from "@material-ui/icons/Add"
 
 // redux
 import { connect } from "react-redux";
-import { postScream, clearErrors } from "../redux/actions/dataActions";
+import { postScream, clearErrors } from "../../redux/actions/dataActions";
 import MyButton from './MyButton';
 import { Dialog, DialogTitle, DialogContent, CircularProgress } from '@material-ui/core';
 
