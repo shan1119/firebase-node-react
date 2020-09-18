@@ -87,9 +87,8 @@ exports.getScream = (req, res) => {
 
 // commnet on a scream
 exports.commentScream = (req, res) => {
-    if (req.body.body.trim() === '') return res.status(400).json({
-        error: 'Must not be empty'
-    })
+    if (req.body.body.trim() === '') 
+        return res.status(400).json({ body: 'Must not be empty' })
 
     const newComment = {
         body: req.body.body,

@@ -87,6 +87,13 @@ export default  {
         '& a': {
           margin: '20px 10px'
         }
-      }
+      },
+      invisibleSeparator: {
+        border: 'none',
+        margin: 4
+      },
+      visibleSeparator: {
+        margin: 4
+      },
     }
   }
