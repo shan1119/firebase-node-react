@@ -113,7 +113,7 @@ export const postComment = (screamId, commentData) => dispatch => {
 }
 
 export const getUserData = (userHandle) => dispatch => {
-    dispatch({ type: LOADING_USER})
+    dispatch({ type: LOADING_DATA})
     axios.get(`/user/${userHandle}`)
         .then(res => {
             dispatch({
