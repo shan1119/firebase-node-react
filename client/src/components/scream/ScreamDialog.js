@@ -19,7 +19,7 @@ import Comments from './Comments';
 import CommentForm from './CommentForm';
 
 const styles = theme => ({
-  ...theme.sub,
+  ...theme.spreadThis,
   expandButton: {
     position: "absolute",
     left: "90%",

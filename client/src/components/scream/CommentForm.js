@@ -44,11 +44,11 @@ class CommentForm extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <TextField name="body" type="text" label="Scream Body"
                         placeholder="Input Scream Body"
-                        error={errors.body ? true : false}
-                        helperText={errors.body}
+                        error={errors.comment ? true : false}
+                        helperText={errors.comment}
                         value={this.state.body}
                         onChange={this.handleChange} className={classes.textField} fullWidth />
-                    <Button type="submit" variant="contained" color="primary" className={classes.button}>
+                    <Button type="submit" variant="contained" color="primary">
                         Submit
                     </Button>
                 </form>

@@ -263,10 +263,10 @@ exports.getUserDetails = (req, res) => {
           body: doc.data().body,
           createdAt: doc.data().createdAt,
           userHandle: doc.data().userHandle,
-          imageUrl: doc.data().imageUrl,
+          userImage: doc.data().userImage,
           likeCount: doc.data().likeCount,
           commentCount: doc.data().commentCount,
-          screamId: doc.data().screamId,
+          screamId: doc.id,
         });
       });
       return res.json(userData);
