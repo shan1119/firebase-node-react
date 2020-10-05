@@ -42,6 +42,11 @@ class ScreamDialog extends Component {
     state = {
         open: false,
     };
+    componentDidMount() {
+        if(this.props.openDialog) {
+            this.handleOpen();
+        }
+    }
     handleOpen = () => {
         this.setState({ open: true })
         this.props.getScream(this.props.screamId);
@@ -57,7 +62,7 @@ class ScreamDialog extends Component {
                 <CircularProgress size={200} />
             </div>
         ) : (
-            <Grid container spacing={16}>
+            <Grid container spacing={10}>
                 <Grid item sm={5} className={classes.profile}>
                     <img src={userImage} alt="Profile" className="profile-image" />
                 </Grid>

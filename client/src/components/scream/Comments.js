@@ -30,7 +30,7 @@ class Comments extends Component {
                 {
                 comments.map( comment => {
                     return (
-                        <Fragment>
+                        <Fragment key={comment.createdAt}>
                             <hr className={classes.visibleSeparator} />
                             <Grid container>
                                 <Grid item sm={3}>
