@@ -41,6 +41,8 @@ const styles = theme => ({
 class ScreamDialog extends Component {
     state = {
         open: false,
+        oldPath: "",
+        newPath: "",
     };
     componentDidMount() {
         if(this.props.openDialog) {
@@ -48,10 +50,19 @@ class ScreamDialog extends Component {
         }
     }
     handleOpen = () => {
-        this.setState({ open: true })
+        let oldPath = window.location.pathname;
+
+        const { userHandle, screamId } = this.props;
+        const newPath = `/users/${userHandle}/scream/${screamId}`;
+
+        if(oldPath === newPath) oldPath = `/users/${userHandle}`;
+        window.history.pushState(null, null, newPath);
+
+        this.setState({ open: true, oldPath, newPath })
         this.props.getScream(this.props.screamId);
     }
     handleClose = () => {
+        window.history.pushState(null, null, this.state.oldPath);
         this.setState({ open: false })
         this.props.clearErrors();
     }
@@ -62,7 +73,7 @@ class ScreamDialog extends Component {
                 <CircularProgress size={200} />
             </div>
         ) : (
-            <Grid container spacing={10}>
+            <Grid container spacing={16}>
                 <Grid item sm={5} className={classes.profile}>
                     <img src={userImage} alt="Profile" className="profile-image" />
                 </Grid>
