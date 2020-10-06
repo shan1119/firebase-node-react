@@ -141,6 +141,7 @@ exports.getAuthenticatedUser = (req, res) => {
           screamId: doc.data().screamId,
           type: doc.data().type,
           createdAt: doc.data().createdAt,
+          notificationId: doc.id,
         });
       });
       return res.json(userData);
