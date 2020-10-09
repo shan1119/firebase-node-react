@@ -20,6 +20,7 @@ import KeyboardReturn from '@material-ui/icons/KeyboardReturn';
 import { connect } from "react-redux";
 import { uploadUserImage, logoutUser } from "../../redux/actions/userActions";
 import MyButton from '../scream/MyButton';
+import ProfileSkeleton from '../../util/ProfileSkeleton';
 
 const styles = (theme) => ({
     ...theme.sub
@@ -97,7 +98,7 @@ class Profile extends Component {
                     <Button variant="contained" color="secondary" component={Link} to="/signup">Signup</Button>
                 </div>
             </Paper>
-        )) : (<p>loading...</p>);
+        )) : (<ProfileSkeleton />);
         return profileContent;
     }
 }
