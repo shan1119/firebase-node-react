@@ -23,6 +23,8 @@ const {
 const FBAuth = require("./util/fbAuth");
 
 const app = require("express")();
+const cors = require("cors");
+app.use(cors());
 
 // scream routes
 app.get("/scream", getAllScreams);
