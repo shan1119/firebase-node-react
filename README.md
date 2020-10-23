@@ -20,3 +20,5 @@ firebase deploy
 http://localhost:3000/
 
 https://shan0801-186f9.web.app/
+
+https://www.youtube.com/watch?v=m_u6P5k0vP0&t=33527s
